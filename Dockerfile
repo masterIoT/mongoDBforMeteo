@@ -28,5 +28,5 @@ COPY ./scripts /scripts
 CMD mongod --bind_ip_all & \
     echo "Waiting for MongoDB to start..." && \
     sleep 10 && \
-    mongorestore --username=admin --password=@Ipadpro8@@Ipadpro8@ --authenticationDatabase admin /dump && \
+    mongorestore --username=admin --password=@Ipadpro8@ --authenticationDatabase admin /dump && \
     wait
