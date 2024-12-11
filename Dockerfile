@@ -24,6 +24,9 @@ RUN mkdir -p /dump/meteoDB
 # Copier les scripts Python dans l'image
 COPY ./scripts /scripts
 
-# Restaurer la base MongoDB et démarrer MongoDB
-CMD mongorestore --username=admin --password=@Ipadpro8@@Ipadpro8@ --authenticationDatabase admin /dump && \
-    mongod --bind_ip_all
+# Commande pour démarrer MongoDB et restaurer la base
+CMD mongod --bind_ip_all & \
+    echo "Waiting for MongoDB to start..." && \
+    sleep 10 && \
+    mongorestore --username=admin --password=@Ipadpro8@@Ipadpro8@ --authenticationDatabase admin /dump && \
+    wait
