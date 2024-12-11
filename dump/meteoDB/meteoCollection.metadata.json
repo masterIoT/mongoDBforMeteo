@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"AAAAMMJJHH":{"$numberInt":"1"},"NUM_POSTE":{"$numberInt":"1"}},"name":"AAAAMMJJHH_1_NUM_POSTE_1","unique":true}],"uuid":"49d1401519164f2387afa15a6d98c7c4","collectionName":"meteoCollection","type":"collection"}
