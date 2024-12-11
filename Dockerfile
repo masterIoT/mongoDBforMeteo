@@ -19,7 +19,7 @@ RUN mkdir -p /dump/meteoDB
 
 # Télécharger le fichier depuis le lien web
 #ADD https://myaccountdestorage.blob.core.windows.net/siteweb/meteoCollection.bson /dump/meteoDB/
-ADD https://myaccountdestorage.blob.core.windows.net/siteweb/Dockerfile /dump/meteoDB/
+#ADD https://myaccountdestorage.blob.core.windows.net/siteweb/Dockerfile /dump/meteoDB/
 
 # Copier les scripts Python dans l'image
 COPY ./scripts /scripts
