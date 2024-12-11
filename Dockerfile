@@ -1,8 +1,8 @@
 # Utiliser l'image officielle de MongoDB comme base
 FROM mongo:latest
 
-# Installer Python3, pip, et les outils nécessaires
-RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+# Installer Python3, pip, wget, curl, et les outils nécessaires
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv wget
 
 # Créer un environnement virtuel pour Python
 RUN python3 -m venv /opt/venv
@@ -14,8 +14,11 @@ RUN /opt/venv/bin/pip install --upgrade pip && \
 # Ajouter l'environnement virtuel au PATH
 ENV PATH="/opt/venv/bin:$PATH"
 
-# Copier le dump MongoDB dans l'image
-COPY ./dump /dump
+# Créer le dossier dump/meteoDB
+RUN mkdir -p /dump/meteoDB
+
+# Télécharger le fichier depuis le lien web
+ADD <URL_DU_FICHIER> /dump/meteoDB/
 
 # Copier les scripts Python dans l'image
 COPY ./scripts /scripts
