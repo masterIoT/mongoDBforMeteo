@@ -18,7 +18,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 RUN mkdir -p /dump/meteoDB
 
 # Télécharger le fichier depuis le lien web
-ADD <URL_DU_FICHIER> /dump/meteoDB/
+ADD https://myaccountdestorage.blob.core.windows.net/siteweb/meteoCollection.bson /dump/meteoDB/
 
 # Copier les scripts Python dans l'image
 COPY ./scripts /scripts
