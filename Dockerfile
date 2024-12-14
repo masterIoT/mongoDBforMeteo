@@ -13,6 +13,5 @@ COPY scripts /usr/src/app/scripts
 # Démarrer MongoDB avec l'accès limité à localhost (aucune connexion extérieure possible)
 CMD ["bash", "-c", "\
   mongod --bind_ip 127.0.0.1 --fork --logpath /var/log/mongodb.log && \
-  mongorestore --archive=/data/mongodb.archive && \
   tail -f /dev/null \
 "]
