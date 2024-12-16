@@ -5,9 +5,9 @@ FROM mongo:latest
 RUN apt-get update && apt-get install -y python3 python3-pip
 
 # Copier le fichier d'archive dans le conteneur (si nécessaire)
-COPY dump/mongodb.archive /data/mongodb.archive
+#COPY dump/mongodb.archive /data/mongodb.archive
 
-#remplacer par : ADD <AZURE_LINK> /data/mongodb.archive
+ADD https://myaccountdestorage.blob.core.windows.net/siteweb/mongodb.archive /data/mongodb.archive
 
 # Copier le dossier 'scripts' dans le conteneur
 COPY scripts /usr/src/app/scripts
