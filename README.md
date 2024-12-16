@@ -37,4 +37,4 @@ mongorestore --archive=/data/mongodb.archive -u admin -p 'YOURPASSWORD' --authen
 
 ## Connect to MongoDB using Mongo Shell
 # Connect to the database using the Mongo shell.
-mongosh -u admin -p '@Ipadpro8@' --authenticationDatabase admin
+mongosh -u admin -p 'YOURPASSWORD' --authenticationDatabase admin
