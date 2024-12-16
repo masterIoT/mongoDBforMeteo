@@ -1,11 +1,18 @@
 # MongoDB Docker Setup
 
 ## Pull the Docker Image
-# Pull the MongoDB image from GitHub Container Registry.
+Download the MongoDB image from GitHub Container Registry.
+
+```bash
 docker pull ghcr.io/masteriot/mongdbformeteo:latest
+```
 
 ## Run the Docker Container
-# For Windows
+
+### For Windows
+Run the following command to start the Docker container on Windows:
+
+```powershell
 docker run ^
   -p 127.0.0.1:27017:27017 ^
   --name mongodbformeteo-container ^
@@ -15,8 +22,12 @@ docker run ^
   -d ^
   ghcr.io/masteriot/mongdbformeteo:latest ^
   --auth
+```
 
-# For Linux/Mac
+### For Linux/Mac
+Run the following command to start the Docker container on Linux or Mac:
+
+```bash
 docker run \
   -p 127.0.0.1:27017:27017 \
   --name mongodbformeteo-container \
@@ -26,15 +37,25 @@ docker run \
   -d \
   ghcr.io/masteriot/mongdbformeteo:latest \
   --auth
+```
 
 ## Access the Container's Bash Shell
-# Access the shell to run commands inside the container.
+To access the container's shell and execute commands inside it:
+
+```bash
 docker exec -it mongodbformeteo-container bash
+```
 
 ## Restore the Database
-# Restore your database from an archive.
+To restore your database from an archive:
+
+```bash
 mongorestore --archive=/data/mongodb.archive -u admin -p 'YOURPASSWORD' --authenticationDatabase admin
+```
 
 ## Connect to MongoDB using Mongo Shell
-# Connect to the database using the Mongo shell.
+To connect to the database using the MongoDB shell:
+
+```bash
 mongosh -u admin -p 'YOURPASSWORD' --authenticationDatabase admin
+```
