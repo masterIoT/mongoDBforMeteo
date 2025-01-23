@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y python3 python3-pip
 ADD https://myaccountdestorage.blob.core.windows.net/siteweb/mongodb.archive /data/mongodb.archive
 
 # Copier le dossier 'scripts' dans le conteneur
-COPY scripts /usr/src/app/scripts
+COPY dump
 
 # Démarrer MongoDB avec l'accès limité à localhost (aucune connexion extérieure possible)
 CMD ["bash", "-c", "\
